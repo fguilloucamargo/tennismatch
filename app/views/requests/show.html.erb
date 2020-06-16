@@ -10,7 +10,7 @@
       <% Request.where(user_id: @request.user_id).each do |request|%>
       <li class="">
         <%= request.date %>
-        <%= request.time %>
+        <%= request.time.strftime("%H:%M") %>
         <%= request.location %>
       <% end %>
       </li>

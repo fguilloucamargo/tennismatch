@@ -1,2 +1,20 @@
-<h1>Requests#index</h1>
-<p>Find me in app/views/requests/index.html.erb</p>
+<form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<div class="container">
+  <% @requests.each do |request| %>
+    <div class="d-inline-flex justify-content-between m-2">
+      <div class="card">
+        <%= image_tag "#{request.user.photo}", class: "avatar-large mx-auto d-block" %>
+        <h2><%= request.user.first_name %></h2>
+        <p> <strong><%= request.location %> </strong> </p>
+        <p> <%= request.date %></p>
+        <p> <%= request.time %> </p>
+        <%= link_to "See more", requests_path(request) %>
+      </div>
+    </div>
+  <% end %>
+</div>
+

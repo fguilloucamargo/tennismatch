@@ -1,2 +1,10 @@
 <h1>Requests#new</h1>
 <p>Find me in app/views/requests/new.html.erb</p>
+
+<%= form_for (@request) do |f| %>
+   <%= f.label :date %>
+  <%= f.date_field :date %>
+  <%= f.label :time %>
+  <%= f.time_field :time %>
+  <%= f.submit %>
+<% end %>

@@ -12,7 +12,7 @@
         <p> <strong><%= request.location %> </strong> </p>
         <p> <%= request.date %></p>
         <p> <%= request.time.strftime("%H:%M") %> </p>
-        <%= link_to "See more", requests_path(request) %>
+        <%= link_to "See more", request_path(request) %>
       </div>
     </div>
   <% end %>

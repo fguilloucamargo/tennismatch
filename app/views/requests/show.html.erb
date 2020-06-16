@@ -1,38 +1,22 @@
-<h1><%= @user.name %></h1>
-
-<%= cl_image_tag @request.user.photo, class="avatar-large" %>
-
-<%= link_to "Back to all requests", root_path %>
-
-<div class="row">
-    <div class="col-sm-12 col-md-3">
-      <h3>Request</h3>
-      <table class="">
-        <tbody>
-          <thead>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Address</th>
-            <th>Description</th>
-            <th>Classement</th>
-          </thead>
-          <% @request.users.each do |user| %>
-            <tr>
-              <td><%= user.name %></td>
-              <td><%= user.age %></td>
-              <td><%= request.location%></td>
-              <td><%= user.description %></td>
-              <td><%= user.classement %></td>
-              <td>
-
-                  <i class=""></i>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+<div>
+  <div>
+    <h1><%= @request.user.first_name %></h1>
+    <p><%= @request.user.birth_date %></p>
+    <p><%= @request.user.address %></p>
+    <p><%= @request.user.description %></p>
   </div>
+  <div>
+    <ul class="">
+      <% Request.where(user_id: @request.user_id).each do |request|%>
+      <li class="">
+        <%= request.date %>
+        <%= request.time %>
+        <%= request.location %>
+      <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
 
 <p>Find me in app/views/requests/show.html.erb</p>

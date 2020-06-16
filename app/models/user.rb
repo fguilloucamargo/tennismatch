@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :requests
   has_many :matchs
+
+  validates :first_name, :level, :address, :gender, presence: true
 end

@@ -21,4 +21,6 @@ html_doc.search('.standing-table__player-link')[0..5].each do |element|
   result << [element.search('.text').children.text, element.search('.player img')[0].attributes["data-isg-lazy"].value, element.search('.country img')[0].attributes["title"].value ]
 end
 
-p result
+result.each do |player|
+
+end

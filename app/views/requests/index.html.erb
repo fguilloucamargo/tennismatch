@@ -6,12 +6,13 @@
 <div class="container">
   <% @requests.each do |request| %>
     <div class="row">
-      <div class="col-sm">
+      <div class="col-sm m-3">
         <%= image_tag "#{request.user.photo}", class: "avatar-large" %>
         <h2><%= request.user.first_name %></h2>
-        <p> <strong><%= request.user.address %> </strong> </p>
+        <p> <strong><%= request.location %> </strong> </p>
         <p> <%= request.date %></p>
         <p> <%= request.time %> </p>
+        <%= link_to "See more", requests_path(request) %>
       </div>
     </div>
   <% end %>

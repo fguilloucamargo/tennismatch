@@ -8,6 +8,7 @@ class RequestsController < ApplicationController
   end
 
   def new
+    @request = Requests.new
   end
 
   def create

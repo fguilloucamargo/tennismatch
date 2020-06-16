@@ -1,6 +1,6 @@
 <h1><%= @user.name %></h1>
 
-<%= cl_image_tag @user.photo, class="avatar-large" %>
+<%= cl_image_tag @request.user.photo, class="avatar-large" %>
 
 <%= link_to "Back to all requests", root_path %>
 
@@ -12,7 +12,7 @@
           <thead>
             <th>Name</th>
             <th>Age</th>
-            <th>Location</th>
+            <th>Address</th>
             <th>Description</th>
             <th>Classement</th>
           </thead>
@@ -20,19 +20,18 @@
             <tr>
               <td><%= user.name %></td>
               <td><%= user.age %></td>
+              <td><%= request.location%></td>
               <td><%= user.description %></td>
+              <td><%= user.classement %></td>
               <td>
-                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class="fa fa-trash destroy_dose"></i>
+
+                  <i class=""></i>
                 <% end %>
               </td>
             </tr>
           <% end %>
         </tbody>
       </table>
-    </div>
-    <div class="col-sm-12 col-md-6">
-      <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
     </div>
   </div>
 

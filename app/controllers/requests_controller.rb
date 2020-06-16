@@ -6,9 +6,6 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
-    @user = User.new
-    @match = Match.new
-
   end
 
   def new
@@ -23,7 +20,7 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:date, :time)
+    params.require(:request).permit(:date, :time, :location)
   end
 end
 

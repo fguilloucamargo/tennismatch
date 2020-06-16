@@ -9,6 +9,7 @@
 require 'open-uri'
 require 'nokogiri'
 
+Request.destroy_all
 User.destroy_all
 
 url = "https://www.eurosport.fr/tennis/atp/standing.shtml"
@@ -26,5 +27,23 @@ html_doc.search('.standing-table__player-link')[0..10].each do |element|
 end
 
 result.each do |player|
-  User.create!(first_name: player[0], photo: player[1], address: player[2], gender: "male", email: "#{player[0].downcase.gsub(" ", "_")}@gmail.com", password: "secret", level: classement.shuffle.first)
+  User.create!(first_name: player[0], photo: player[1], address: player[2], gender: "Men", email: "#{player[0].downcase.gsub(" ", "_")}@gmail.com", password: "secret", level: classement.shuffle.first)
 end
+
+req1 = Request.new
+
+req1.user = User.first
+date = Date.new(2020, 6, 27)
+req1.date = date
+req1.time = "20"
+req1.location = "Paris"
+req1.save
+
+req2 = Request.new
+
+req2.user = User.first
+date = Date.new(2020, 6, 30)
+req2.date = date
+req2.time = "10"
+req2.location = "London"
+req2.save

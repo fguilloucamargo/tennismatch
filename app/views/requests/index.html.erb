@@ -5,9 +5,9 @@
 
 <div class="container">
   <% @requests.each do |request| %>
-    <div class="row">
-      <div class="col-sm m-3">
-        <%= image_tag "#{request.user.photo}", class: "avatar-large" %>
+    <div class="d-inline-flex justify-content-between m-2">
+      <div class="card">
+        <%= image_tag "#{request.user.photo}", class: "avatar-large mx-auto d-block" %>
         <h2><%= request.user.first_name %></h2>
         <p> <strong><%= request.location %> </strong> </p>
         <p> <%= request.date %></p>

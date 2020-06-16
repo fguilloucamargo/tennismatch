@@ -11,7 +11,7 @@
         <h2><%= request.user.first_name %></h2>
         <p> <strong><%= request.location %> </strong> </p>
         <p> <%= request.date %></p>
-        <p> <%= request.time %> </p>
+        <p> <%= request.time.strftime("%H:%M") %> </p>
         <%= link_to "See more", requests_path(request) %>
       </div>
     </div>

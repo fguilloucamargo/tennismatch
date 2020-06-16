@@ -10,13 +10,30 @@ class RequestsController < ApplicationController
   end
 
   def new
-    @request = Requests.new
+    @request = Request.new
   end
 
   def create
+    @request = Request.new(request_params)
+    @request.user = current_user
+
+    if @request.save
+      redirect_to request_path(@request)
+    else
+      render :new
+    end
   end
 
   def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+    redirect_to cocktails_path
+  end
+
+  private
+
+  def request_params
+    params.require(:request).permit(:date, :time, :location)
   end
 
   private

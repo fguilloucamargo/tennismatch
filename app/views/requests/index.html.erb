@@ -7,6 +7,7 @@
 <h2>The most famous tennis player</h2>
 
 <div class="card-container">
+
   <% @requests.each do |request| %>
     <div class="card">
         <%= image_tag "#{request.user.photo}", class: "card-avatar" %>

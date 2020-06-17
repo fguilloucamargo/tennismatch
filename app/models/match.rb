@@ -1,4 +1,4 @@
 class Match < ApplicationRecord
-  belongs_to :user
-  belongs_to :request
+  belongs_to :requests
+  belongs_to :users
 end

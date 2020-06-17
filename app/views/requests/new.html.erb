@@ -1,13 +1,15 @@
-<h1>Requests#new</h1>
-<p>Find me in app/views/requests/new.html.erb</p>
+<div class="container text-center">
+  <h1 class="p-3">Create a new Match !</h1>
+  <hp class="p-3">Just enter your date, time and location</p>
 
-<%= form_for (@request) do |f| %>
-   <%= f.label :date %>
-  <%= f.date_field :date %>
-  <%= f.label :time %>
-  <%= f.time_field :time %>
-   <%= f.label :location %>
-  <%= f.text_field :location %>
+  <%= form_for (@request) do |f| %>
+     <%= f.label :date %>
+    <%= f.date_field :date %>
+    <%= f.label :time %>
+    <%= f.time_field :time %>
+     <%= f.label :location %>
+    <%= f.text_field :location %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit %>
+  <% end %>
+</div>

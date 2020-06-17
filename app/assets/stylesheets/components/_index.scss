@@ -4,3 +4,48 @@
 @import "navbar";
 @import "search";
 @import "footer";
+@import "card";
+@import "banner";
+@import "btn";
+
+
+h2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 21px;
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  padding: 25px;
+  margin-bottom: 60px;
+}
+
+// Small devices (phones, 376px and up)
+@media (min-width: 276px) {
+  h2 {
+    font-size: 18px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  h2 {
+    font-size: 28px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  h2 {
+    font-size: 32px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 36px;
+  }
+}

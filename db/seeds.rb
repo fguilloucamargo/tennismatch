@@ -67,6 +67,25 @@ req4.date = date
 req4.time = "20"
 req4.location = "Bordeaux"
 req4.save
+req5 = Request.new
+
+req5 = Request.new
+
+req5.user = User.first
+date = Date.new(2020, 6, 30)
+req5.date = date
+req5.time = "10"
+req5.location = "London"
+req5.save
+
+req6 = Request.new
+
+req6.user = User.first
+date = Date.new(2020, 6, 30)
+req6.date = date
+req6.time = "10"
+req6.location = "London"
+req6.save
 
 m1 = Match.new
 m1.request = req1
@@ -77,4 +96,3 @@ m2 = Match.new
 m2.request = req2
 m2.user = User.last
 m2.save
-

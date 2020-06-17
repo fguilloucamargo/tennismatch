@@ -24,12 +24,17 @@ class RequestsController < ApplicationController
     end
   end
 
-def destroy
-    @request = Request.find(params[:id])
-    @request.destroy
-    flash.notice = "request '#{@request.id}' was deleted"
-    redirect_to request_path(@request)
-end
+  # def destroy
+  #   @request = Request.find(params[:id])
+  #   @request.destroy
+  #   redirect_to root_path
+  # end
+
+  private
+
+  def request_params
+    params.require(:request).permit(:date, :time, :location)
+  end
 
   private
 

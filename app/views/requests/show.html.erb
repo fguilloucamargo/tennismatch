@@ -13,6 +13,7 @@
           <%= request.date %>
           <%= request.time.strftime("%H:%M") %>
           <%= request.location %>
+          <%= link_to "Let's play", request_matches_path(request), method: :post, data: {confirm: "Do you want to check this match?" } %>
         <% end %>
         </li>
       </ul>

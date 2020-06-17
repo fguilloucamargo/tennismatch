@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container text-center">
   <h1><%= current_user.first_name.capitalize %>, welcome to your dashboard! </h1>
-  <div class="card">
+  <div class="card mx-auto">
     <h2> Your agenda</h2>
     <%= link_to "Add a new", new_request_path %>
     <ul>
@@ -22,7 +22,7 @@
   <h2>Your next matches are:</h2>
 
   <% @matches.each do |match| %>
-    <div class="card m-5">
+    <div class="card mx-auto">
       <h3><%= "#{match.user.first_name} - #{match.request.location}" %></h3>
       <p><%= match.request.date %></p>
       <p><%= match.request.time.strftime("%H:%M") %></p>

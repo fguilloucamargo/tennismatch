@@ -1,26 +1,21 @@
-<div>
+<div class="container">
   <div>
-    <h1><%= @request.user.first_name %></h1>
-    <p><%= @request.user.birth_date %></p>
-    <p><%= @request.user.address %></p>
-    <p><%= @request.user.description %></p>
-  </div>
-  <div>
-    <ul class="">
-      <% Request.where(user_id: @request.user_id).each do |request|%>
-      <li class="">
-        <%= request.date %>
-        <%= request.time.strftime("%H:%M") %>
-        <%= request.location %>
-        <%= link_to "Delete", request_path(request), method: :delete, data: {confirm: "Really delete this request?"}%>
-      <% end %>
-      </li>
-    </ul>
+    <div>
+      <h1><%= @request.user.first_name %></h1>
+      <p><%= @request.user.birth_date %></p>
+      <p><%= @request.user.address %></p>
+      <p><%= @request.user.description %></p>
+    </div>
+    <div>
+      <ul class="">
+        <% Request.where(user_id: @request.user_id).each do |request|%>
+        <li class="">
+          <%= request.date %>
+          <%= request.time.strftime("%H:%M") %>
+          <%= request.location %>
+        <% end %>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
-
-
-
-
-
-<p>Find me in app/views/requests/show.html.erb</p>

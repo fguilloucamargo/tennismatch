@@ -24,17 +24,12 @@ class RequestsController < ApplicationController
     end
   end
 
-  def destroy
+def destroy
     @request = Request.find(params[:id])
     @request.destroy
-    redirect_to cocktails_path
-  end
-
-  private
-
-  def request_params
-    params.require(:request).permit(:date, :time, :location)
-  end
+    flash.notice = "request '#{@request.id}' was deleted"
+    redirect_to request_path(@request)
+end
 
   private
 
@@ -42,4 +37,3 @@ class RequestsController < ApplicationController
     params.require(:request).permit(:date, :time, :location)
   end
 end
-

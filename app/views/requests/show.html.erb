@@ -12,11 +12,15 @@
         <%= request.date %>
         <%= request.time.strftime("%H:%M") %>
         <%= request.location %>
+        <%= link_to "Delete", request_path(request), method: :delete, data: {confirm: "Really delete this request?"}%>
       <% end %>
       </li>
     </ul>
   </div>
 </div>
+
+
+
 
 
 <p>Find me in app/views/requests/show.html.erb</p>

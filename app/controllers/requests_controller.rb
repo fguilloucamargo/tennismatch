@@ -18,17 +18,17 @@ class RequestsController < ApplicationController
     @request.user = current_user
 
     if @request.save
-      redirect_to request_path(@request)
+      redirect_to request_matches_path(@request)
     else
       render :new
     end
   end
 
-  # def destroy
-  #   @request = Request.find(params[:id])
-  #   @request.destroy
-  #   redirect_to root_path
-  # end
+  def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+    redirect_to request_matches_path(@request)
+  end
 
   private
 

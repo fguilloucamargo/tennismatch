@@ -24,11 +24,11 @@ class RequestsController < ApplicationController
     end
   end
 
-  def destroy
-    @request = Request.find(params[:id])
-    @request.destroy
-    redirect_to cocktails_path
-  end
+  # def destroy
+  #   @request = Request.find(params[:id])
+  #   @request.destroy
+  #   redirect_to root_path
+  # end
 
   private
 

@@ -8,15 +8,17 @@
 
 <div class="card-container">
 
-  <% @requests.each do |request| %>
-    <div class="card">
-        <%= image_tag "#{request.user.photo}", class: "card-avatar" %>
-        <h2><%= request.user.first_name %></h2>
-        <p> <strong><%= request.location %> </strong> </p>
-        <p> <%= request.date %></p>
-        <p> <%= request.time.strftime("%H:%M") %> </p>
-        <div class="link"> <%= link_to "See more", requests_path(request) %> </div>
-    </div>
+  <% if current_user %>
+    <% @requests.each do |request| %>
+      <div class="card">
+          <%= image_tag "#{request.user.photo}", class: "card-avatar" %>
+          <h2><%= request.user.first_name %></h2>
+          <p> <strong><%= request.location %> </strong> </p>
+          <p> <%= request.date %></p>
+          <p> <%= request.time.strftime("%H:%M") %> </p>
+          <div class="link"> <%= link_to "See more", requests_path(request) %> </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
 

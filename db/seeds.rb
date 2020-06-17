@@ -9,8 +9,10 @@
 require 'open-uri'
 require 'nokogiri'
 
+Match.destroy_all
 Request.destroy_all
 User.destroy_all
+
 
 url = "https://www.eurosport.fr/tennis/atp/standing.shtml"
 
@@ -47,3 +49,32 @@ req2.date = date
 req2.time = "10"
 req2.location = "London"
 req2.save
+
+req3 = Request.new
+
+req3.user = User.last
+date = Date.new(2020, 7, 30)
+req3.date = date
+req3.time = "8"
+req3.location = "Budapest"
+req3.save
+
+req4 = Request.new
+
+req4.user = User.last
+date = Date.new(2020, 7, 12)
+req4.date = date
+req4.time = "20"
+req4.location = "Bordeaux"
+req4.save
+
+m1 = Match.new
+m1.request = req1
+m1.user = User.last
+m1.save
+
+m2 = Match.new
+m2.request = req2
+m2.user = User.last
+m2.save
+

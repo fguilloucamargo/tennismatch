@@ -47,3 +47,39 @@ req2.date = date
 req2.time = "10"
 req2.location = "London"
 req2.save
+
+req3 = Request.new
+
+req3.user = User.first
+date = Date.new(2020, 12, 30)
+req3.date = date
+req3.time = "10"
+req3.location = "London"
+req3.save
+
+req4 = Request.new
+
+req4.user = User.first
+date = Date.new(2020, 6, 30)
+req4.date = date
+req4.time = "10"
+req4.location = "London"
+req4.save
+
+req5 = Request.new
+
+req5.user = User.first
+date = Date.new(2020, 6, 30)
+req5.date = date
+req5.time = "10"
+req5.location = "London"
+req5.save
+
+req6 = Request.new
+
+req6.user = User.first
+date = Date.new(2020, 6, 30)
+req6.date = date
+req6.time = "10"
+req6.location = "London"
+req6.save

@@ -4,3 +4,20 @@
 @import "navbar";
 @import "search";
 @import "footer";
+@import "card";
+@import "banner";
+@import "btn";
+
+
+h2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 21px;
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  padding: 25px;
+  margin-bottom: 60px;
+}

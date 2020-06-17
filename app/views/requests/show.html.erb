@@ -1,12 +1,12 @@
 <div class="container">
-  <div>
-    <div>
+  <div class="m-5">
+    <div class="card">
+      <%= image_tag "#{@request.user.photo}", class: "card-avatar" %>
       <h1><%= @request.user.first_name %></h1>
+      <h3><%= @request.user.level %></h3>
       <p><%= @request.user.birth_date %></p>
       <p><%= @request.user.address %></p>
       <p><%= @request.user.description %></p>
-    </div>
-    <div>
       <ul class="">
         <% Request.where(user_id: @request.user_id).each do |request|%>
         <li class="">

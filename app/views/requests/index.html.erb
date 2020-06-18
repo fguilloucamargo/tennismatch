@@ -1,7 +1,6 @@
-<div class="banner" style="background-image: url('<%= image_path "banner.png" %>')">
+<div class="banner min-100-vh" style="background-image: url('<%= image_path "banner.png" %>')">
   <div class="banner-text">
-    <p>Choose your next game!</p>
-
+    <p>Choose your next game !</p>
   </div>
 </div>
 
@@ -13,11 +12,19 @@
     <div class="card">
         <%= image_tag "#{request.user.photo}", class: "card-avatar" %>
         <h2><%= request.user.first_name %></h2>
-        <p> <strong><%= request.location %> </strong> </p>
-        <p> <%= request.date %></p>
-        <p> <%= request.time.strftime("%H:%M") %> </p>
+        <p>
+          <i class="fas fa-map-marked-alt"></i>
+          <strong><%= request.location %> </strong>
+        </p>
+        <p>
+          <i class="far fa-calendar-alt"></i>
+          <%= request.date %>
+        </p>
+        <p>
+          <i class="far fa-clock text-center"></i>
+          <%= request.time.strftime("%H:%M") %>
+        </p>
         <div class="link"> <%= link_to "See more", request_path(request) %> </div>
     </div>
   <% end %>
 </div>
-

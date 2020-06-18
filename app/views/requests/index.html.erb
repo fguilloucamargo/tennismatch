@@ -31,7 +31,7 @@
     <% if request.matchs.empty? %>
       <%= link_to request_path(request) do %>
         <div class="card">
-          <%= cl_image_tag "#{request.user.photo.key}", crop: :fill, class: "card-avatar" %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-avatar" %>
           <h3><%= request.user.first_name %></h3>
           <p>
             <i class="fas fa-map-marked-alt"></i>

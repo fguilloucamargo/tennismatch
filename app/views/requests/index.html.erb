@@ -1,6 +1,20 @@
 <div class="banner min-100-vh" style="background-image: url('<%= image_path "banner.png" %>')">
   <div class="banner-text">
-    <p>Choose your next game!</p>
+    <div>
+      <p>Choose your next game!</p>
+      <div class = 'form-group'>
+        <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control mt-3",
+          placeholder: "Where would you like to play?"
+        %>
+        <%= submit_tag "Search", class: "btn mt-3" %>
+        <% end %>
+      </div>
+
+    </div>
+
     <div class="raquette">
       <img id="raquette" src="<%= asset_path('raquette.png')%>" alt="raquette">
     </div>

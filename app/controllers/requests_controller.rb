@@ -11,6 +11,7 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
+    @requests = Request.where(user_id: current_user)
   end
 
   def create
@@ -35,11 +36,4 @@ class RequestsController < ApplicationController
   def request_params
     params.require(:request).permit(:date, :time, :location)
   end
-
-  private
-
-  def request_params
-    params.require(:request).permit(:date, :time, :location)
-  end
 end
-

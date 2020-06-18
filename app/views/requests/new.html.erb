@@ -12,4 +12,26 @@
 
     <%= f.submit %>
   <% end %>
+
+  <div class="m-5">
+    <h1><%= current_user.first_name.capitalize %>, welcome to your dashboard! </h1>
+    <div class="card mx-auto">
+      <h2> Your agenda</h2>
+      <%= link_to "Add a new", new_request_path %>
+      <ul>
+        <% @requests.each do |request| %>
+          <li>
+            <p>
+              <%= request.date %>(<%= request.time.strftime("%H:%M") %>) - <%= request.location %>
+              <%= link_to request_path(request), method: :delete, data: {confirm: "Are you sure ?"} do %>
+                <i class="fas fa-trash-alt fa-fw"></i>
+              <% end %>
+            </p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
+
+

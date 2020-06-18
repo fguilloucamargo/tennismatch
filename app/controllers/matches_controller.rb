@@ -5,7 +5,7 @@ class MatchesController < ApplicationController
   end
 
   def create
-    @match = Match.new()
+    @match = Match.new
     @match.user = Request.find(params["request_id"]).user
     @match.request = Request.find(params["request_id"])
     @match.save

@@ -4,17 +4,20 @@
     <div class="raquette">
       <img id="raquette" src="<%= asset_path('raquette.png')%>" alt="raquette">
     </div>
+    <div class="balle">
+      <img id="balle" src="<%= asset_path('balle.png')%>" alt="balle">
+    </div>
   </div>
 </div>
 
-<h2>The most famous tennis player</h2>
+<h2>They are looking for a partner ...</h2>
 
 <div class="card-container">
   <% @requests.each do |request| %>
     <% if request.matchs.empty? %>
       <div class="card">
         <%= image_tag "#{request.user.photo}", class: "card-avatar" %>
-        <h2><%= request.user.first_name %></h2>
+        <h3><%= request.user.first_name %></h3>
         <p>
           <i class="fas fa-map-marked-alt"></i>
           <strong><%= request.location %> </strong>

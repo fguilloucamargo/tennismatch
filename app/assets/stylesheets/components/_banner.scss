@@ -6,6 +6,13 @@
   margin-bottom: 35px;
   margin-top:-17px;
 }
+#raquette {
+  width: 200px;
+}
+
+#balle {
+  width: 55px;
+}
 
 .banner-text {
   display:flex;
@@ -28,26 +35,36 @@
   padding-top: 410px;
   font-size: 50px;
   color: #313030;
+  margin-bottom: -10px;
 }
 
 // Small devices (phones, 376px and up)
 @media (min-width: 276px) {
   .banner p {
-    font-size: 28px;
+    font-size: 20px;
+  }
+  #raquette {
+  width: 180px;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .banner p {
-    font-size: 40px;
+    font-size: 32px;
+  }
+  #raquette {
+  width: 180px;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .banner p {
-    font-size: 48px;
+    font-size: 38px;
+  }
+  #raquette {
+  width: 200px;
   }
 }
 
@@ -55,5 +72,8 @@
 @media (min-width: 1200px) {
   .banner p {
     font-size: 50px;
+  }
+  #raquette {
+  width: 200px;
   }
 }

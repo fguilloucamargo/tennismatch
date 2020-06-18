@@ -10,9 +10,9 @@
 <h2>The most famous tennis player</h2>
 
 <div class="card-container">
-
   <% @requests.each do |request| %>
-    <div class="card">
+    <% if request.matchs.empty? %>
+      <div class="card">
         <%= image_tag "#{request.user.photo}", class: "card-avatar" %>
         <h2><%= request.user.first_name %></h2>
         <p>
@@ -28,6 +28,7 @@
           <%= request.time.strftime("%H:%M") %>
         </p>
         <div class="link"> <%= link_to "See more", request_path(request) %> </div>
-    </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

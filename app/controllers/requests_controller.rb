@@ -15,6 +15,7 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
+    @requests = Request.where(user_id: current_user)
   end
 
   def create
@@ -32,12 +33,6 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.destroy
     redirect_to request_matches_path(@request)
-  end
-
-  private
-
-  def request_params
-    params.require(:request).permit(:date, :time, :location)
   end
 
   private

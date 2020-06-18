@@ -11,8 +11,8 @@
       <ul class="requests-list">
         <% Request.where(user_id: @request.user_id).each do |request|%>
         <li class="list">
-          <p><%= request.date %></p>
-          <p><%= request.time.strftime("%H:%M") %></p>
+          <p><%= request.date.strftime("%d %B") %></p>
+          <p><%= request.time.strftime("%I:%M %p") %></p>
           <p><%= request.location %></p>
           <%= link_to "Let's play", request_matches_path(request), method: :post, data: {confirm: "Do you want to check this match?" } %>
         <% end %>

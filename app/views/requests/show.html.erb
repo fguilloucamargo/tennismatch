@@ -3,7 +3,28 @@
       <%= cl_image_tag "#{@request.user.photo.key}", class: "avatar" %>
       <h3><%= @request.user.first_name %></h3>
       <p><%= @request.user.birth_date %></p>
-      <p><%= @request.user.address %></p>
+      <p><%= @request.user.address %>
+      <% if @request.user.address.upcase == "SUISSE" %>
+      <img src="https://img.icons8.com/color/48/000000/switzerland.png"/>
+      <% else %>
+      <% end %>
+      <% if @request.user.address.upcase == "SERBIE" %>
+      <img src="https://img.icons8.com/color/48/000000/serbia.png"/>
+      <% else %>
+      <% end %>
+      <% if @request.user.address.upcase == "AUTRICHE" %>
+      <img src="https://img.icons8.com/color/48/000000/austria.png"/>
+      <% else %>
+      <% end %>
+      <% if @request.user.address.upcase == "GRECE" %>
+      <img src="https://img.icons8.com/color/48/000000/greece.png"/>
+      <% else %>
+      <% end %>
+      <% if @request.user.address.upcase == "ESPAGNE" %>
+      <img src="https://img.icons8.com/color/48/000000/spain.png"/>
+      <% else %>
+      <% end %>
+      </p>
       <p><%= @request.user.description %></p>
       <p><%= @request.user.level %></p>
     </div>

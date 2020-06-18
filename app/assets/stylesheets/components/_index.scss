@@ -8,6 +8,9 @@
 @import "banner";
 @import "btn";
 
+.min-100-vh {
+  min-height: calc(100vh - 182px);
+}
 
 h2 {
   font-family: Roboto;

@@ -25,11 +25,11 @@
           </p>
           <p>
             <i class="far fa-calendar-alt"></i>
-            <%= request.date %>
+            <%= request.date.strftime("%d %B") %>
           </p>
           <p>
             <i class="far fa-clock text-center"></i>
-            <%= request.time.strftime("%H:%M") %>
+            <%= request.time.strftime("%I:%M %p") %>
           </p>
         </div>
       <% end %>

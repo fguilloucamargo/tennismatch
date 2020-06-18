@@ -6,10 +6,10 @@
         <%= form_tag root_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control",
-          placeholder: "Find our next partner"
+          class: "form-control mt-3",
+          placeholder: "Where would you like to play?"
         %>
-        <%= submit_tag "Search", class: "btn" %>
+        <%= submit_tag "Search", class: "btn mt-3" %>
         <% end %>
       </div>
 

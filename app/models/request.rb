@@ -6,7 +6,7 @@ class Request < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [:date, :location],
+    against: [:location, :date],
     using: {
       tsearch: { prefix: true }
     }

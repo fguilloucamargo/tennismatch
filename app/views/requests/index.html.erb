@@ -1,15 +1,21 @@
 <div class="banner min-100-vh" style="background-image: url('<%= image_path "banner.png" %>')">
   <div class="banner-text">
-    <p>Choose your next game!</p>
-    <div class="raquette">
-      <%= form_tag root_path, method: :get do %>
+    <div>
+      <p>Choose your next game!</p>
+      <div class = 'form-group'>
+        <%= form_tag root_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Find our next partner"
         %>
-      <%= submit_tag "Search", class: "btn" %>
-      <% end %>
+        <%= submit_tag "Search", class: "btn" %>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="raquette">
       <img id="raquette" src="<%= asset_path('raquette.png')%>" alt="raquette">
     </div>
   </div>
@@ -19,7 +25,7 @@
 
 <div class="card-container">
   <% @requests.each do |request| %>
-    <% if request.matchs.empty? %>
+    <% if request.matchs.empty?%>
       <div class="card">
         <%= image_tag "#{request.user.photo}", class: "card-avatar" %>
         <h2><%= request.user.first_name %></h2>

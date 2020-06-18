@@ -2,6 +2,14 @@
   <div class="banner-text">
     <p>Choose your next game!</p>
     <div class="raquette">
+      <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find our next partner"
+        %>
+      <%= submit_tag "Search", class: "btn" %>
+      <% end %>
       <img id="raquette" src="<%= asset_path('raquette.png')%>" alt="raquette">
     </div>
   </div>

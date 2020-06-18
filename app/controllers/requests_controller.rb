@@ -42,4 +42,3 @@ class RequestsController < ApplicationController
     params.require(:request).permit(:date, :time, :location)
   end
 end
-

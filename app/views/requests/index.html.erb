@@ -1,6 +1,20 @@
 <div class="banner min-100-vh" style="background-image: url('<%= image_path "banner.png" %>')">
   <div class="banner-text">
-    <p>Choose your next game!</p>
+    <div>
+      <p>Choose your next game!</p>
+      <div class = 'form-group'>
+        <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control mt-3",
+          placeholder: "Where would you like to play?"
+        %>
+        <%= submit_tag "Search", class: "btn mt-3" %>
+        <% end %>
+      </div>
+
+    </div>
+
     <div class="raquette">
       <img id="raquette" src="<%= asset_path('raquette.png')%>" alt="raquette">
     </div>
@@ -15,23 +29,24 @@
 <div class="card-container">
   <% @requests.each do |request| %>
     <% if request.matchs.empty? %>
-      <div class="card">
-        <%= image_tag "#{request.user.photo}", class: "card-avatar" %>
-        <h3><%= request.user.first_name %></h3>
-        <p>
-          <i class="fas fa-map-marked-alt"></i>
-          <strong><%= request.location %> </strong>
-        </p>
-        <p>
-          <i class="far fa-calendar-alt"></i>
-          <%= request.date %>
-        </p>
-        <p>
-          <i class="far fa-clock text-center"></i>
-          <%= request.time.strftime("%H:%M") %>
-        </p>
-        <div class="link"> <%= link_to "See more", request_path(request) %> </div>
-      </div>
+      <%= link_to request_path(request) do %>
+        <div class="card">
+          <%= cl_image_tag "#{request.user.photo.key}", crop: :fill, class: "card-avatar" %>
+          <h3><%= request.user.first_name %></h3>
+          <p>
+            <i class="fas fa-map-marked-alt"></i>
+            <strong><%= request.location %> </strong>
+          </p>
+          <p>
+            <i class="far fa-calendar-alt"></i>
+            <%= request.date.strftime("%d %B") %>
+          </p>
+          <p>
+            <i class="far fa-clock text-center"></i>
+            <%= request.time.strftime("%I:%M %p") %>
+          </p>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

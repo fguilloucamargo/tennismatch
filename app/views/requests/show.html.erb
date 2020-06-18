@@ -1,22 +1,44 @@
   <div class="profile">
     <div class="profile-container">
-      <%= image_tag "#{@request.user.photo}", class: "avatar" %>
+      <%= cl_image_tag "#{@request.user.photo.key}", class: "avatar" %>
       <h3><%= @request.user.first_name %></h3>
       <p><%= @request.user.birth_date %></p>
-      <p><%= @request.user.address %></p>
+      <p><%= @request.user.address %>
+      <% if @request.user.address.upcase == "SUISSE" %>
+      <img src="https://img.icons8.com/color/48/000000/switzerland.png"/>
+      <% else %>
+      <% end %>
+      <% if @request.user.address.upcase == "SERBIE" %>
+      <img src="https://img.icons8.com/color/48/000000/serbia.png"/>
+      <% else %>
+      <% end %>
+      <% if @request.user.address.upcase == "AUTRICHE" %>
+      <img src="https://img.icons8.com/color/48/000000/austria.png"/>
+      <% else %>
+      <% end %>
+      <% if @request.user.address.upcase == "GRECE" %>
+      <img src="https://img.icons8.com/color/48/000000/greece.png"/>
+      <% else %>
+      <% end %>
+      <% if @request.user.address.upcase == "ESPAGNE" %>
+      <img src="https://img.icons8.com/color/48/000000/spain.png"/>
+      <% else %>
+      <% end %>
+      </p>
       <p><%= @request.user.description %></p>
       <p><%= @request.user.level %></p>
     </div>
     <div class="requests">
       <ul class="requests-list">
         <% Request.where(user_id: @request.user_id).each do |request|%>
-        <li class="list">
-          <p><%= request.date %></p>
-          <p><%= request.time.strftime("%H:%M") %></p>
-          <p><%= request.location %></p>
-          <%= link_to "Let's play", request_matches_path(request), method: :post, data: {confirm: "Do you want to check this match?" } %>
+          <%= link_to request_matches_path(request), method: :post, data: {confirm: "Do you want to check this match?" } do %>
+            <li class="list">
+              <p><%= request.date.strftime("%d %B") %></p>
+              <p><%= request.time.strftime("%I:%M %p") %></p>
+              <p><%= request.location %></p>
+            </li>
+          <% end %>
         <% end %>
-        </li>
       </ul>
     <div class="balles">
       <img id="balles" src="<%= asset_path('balles.png')%>" alt="balles">

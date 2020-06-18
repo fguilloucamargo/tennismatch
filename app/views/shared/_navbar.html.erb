@@ -1,8 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <h1><strong>Tennis</strong>match</h1>
-  <% end %>
+    <h1><strong>Tennis</strong>match <img src="https://img.icons8.com/pastel-glyph/64/000000/tennis-ball--v2.png"/></h1>
 
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -25,7 +25,7 @@
 
       <% if current_user %>
         <li class="nav-item dropdown">
-          <%= image_tag "https://pbs.twimg.com/profile_images/689018696258338816/8zdI7NOf_400x400.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag "#{current_user.photo.key}", width: 40, height: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", request_matches_path(:request_id), class: "dropdown-item" %>
             <%= link_to "Account", edit_user_registration_path, class: "dropdown-item" %>

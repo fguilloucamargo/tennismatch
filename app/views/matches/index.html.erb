@@ -1,34 +1,15 @@
-<div class="container text-center min-100-vh">
-  <h1><%= current_user.first_name.capitalize %>, welcome to your dashboard! </h1>
-  <div class="card mx-auto">
-    <h2> Your agenda</h2>
-    <%= link_to "Add a new", new_request_path %>
-    <ul>
-      <% @requests.each do |request| %>
-      <li>
-        <p>
-          <%= request.date %>(<%= request.time.strftime("%H:%M") %>) - <%= request.location %>
-          <%= link_to request_path(request), method: :delete, data: {confirm: "Are you sure ?"} do %>
-            <i class="fas fa-trash-alt fa-fw"></i>
-          <% end %>
-        </p>
-      </li>
-      <% end %>
-    </ul>
-
-  </div>
-
-
+<div class="container">
   <h2>Your next matches are:</h2>
-
   <% @matches.each do |match| %>
     <div class="card mx-auto">
-      <h3><%= "#{match.user.first_name} - #{match.request.location}" %></h3>
-      <p><%= match.request.date %></p>
-      <p><%= match.request.time.strftime("%H:%M") %></p>
-      <%= link_to "Remove this match", match_path(match), method: :delete, data: {confirm: "Do you want to remove this match?" } %>
-    </div>
-  <% end %>
-
+      <%= image_tag "#{match.user.photo}", class: "profile-avatar" %>
+        <h3><%= "#{match.user.first_name} - #{match.request.location}" %></h3>
+        <p><%= match.request.date.strftime("%d %B") %></p>
+        <p><%= match.request.time.strftime("%I:%M %p") %></p>
+        <%= link_to match_path(match), method: :delete, data: {confirm:("Do you want to remove this match?")} do %>
+          <i class="fas fa-trash-alt fa-fw"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
-

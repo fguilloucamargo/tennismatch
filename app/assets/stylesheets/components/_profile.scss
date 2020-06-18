@@ -16,7 +16,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .profile-container .avatar {
@@ -39,31 +38,45 @@
 }
 
 ul.requests-list {
-  display: flex;
-  justify-content: center;
-  padding: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0px;
   margin: 0px;
+  padding: 0px;
+
 
 }
 
 .list {
   display:flex;
-  width: 140px;
+  width: auto;
   padding: 10px;
   margin: 10px;
   flex-direction: column;
   background-color: white;
-  border-radius: 5%;
-  position: center;
+  align-items: center;
+  border-radius: 15px;
 }
 
-.list a {
+.list:hover {
+  background-color: #f7c759;
+}
+
+a {
  text-align: center;
+ font-family: Roboto;
+ color: #fb5e02;
+}
+
+a:hover {
+text-decoration: none;
 }
 
 .list p {
   text-align: center;
-  margin-bottom: 0px;
+  font-family: Roboto;
+  color: #fb5e02;
+  margin: 0px;
 }
 
 .date {

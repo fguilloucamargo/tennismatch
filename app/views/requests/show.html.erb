@@ -1,6 +1,6 @@
   <div class="profile min-100-vh">
     <div class="">
-      <%= image_tag "#{@request.user.photo}", class: "profile-avatar" %>
+      <%= cl_image_tag "#{@request.user.photo.key}" %>
       <h2><%= @request.user.first_name %></h2>
       <p><%= @request.user.birth_date %></p>
       <p><%= @request.user.address %></p>

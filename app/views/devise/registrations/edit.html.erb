@@ -7,6 +7,10 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        <%= f.input :photo, as: :file %>
         <%= f.input :email, required: true, autofocus: true %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

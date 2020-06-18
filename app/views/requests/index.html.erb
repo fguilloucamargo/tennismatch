@@ -13,7 +13,8 @@
 
   <% @requests.each do |request| %>
     <div class="card">
-        <%= image_tag "#{request.user.photo}", class: "card-avatar" %>
+        <%= cl_image_tag "#{request.user.photo.key}", crop: :fill, class: "card-avatar" %>
+
         <h2><%= request.user.first_name %></h2>
         <p>
           <i class="fas fa-map-marked-alt"></i>

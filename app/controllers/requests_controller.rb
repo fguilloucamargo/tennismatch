@@ -2,7 +2,11 @@ class RequestsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @requests = Request.all
+    if params[:query].present?
+      @requests = Request.global_search(params[:query])
+    else
+      @requests = Request.all
+    end
   end
 
   def show
@@ -11,14 +15,14 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
+    @requests = Request.where(user_id: current_user)
   end
 
   def create
     @request = Request.new(request_params)
     @request.user = current_user
-
     if @request.save
-      redirect_to request_matches_path(@request)
+      redirect_to new_request_path(@request)
     else
       render :new
     end
@@ -27,13 +31,7 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
-    redirect_to request_matches_path(@request)
-  end
-
-  private
-
-  def request_params
-    params.require(:request).permit(:date, :time, :location)
+    redirect_to new_request_path
   end
 
   private

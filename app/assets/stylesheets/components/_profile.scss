@@ -1,85 +1,97 @@
 .profile {
-  width: 700px;
+  height-min: 100vh;
+  width: 600px;
   background-color: #fb5e02;
-  margin-top: 25px;
+  margin-top: 140px;
   margin-bottom: 50px;
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 15px;
   justify-content: center;
   box-shadow: 10px 10px 0px rgba(252,228,174,1);
   margin-left: auto;
   margin-right: auto;
 }
 
-.profile-avatar {
-  border: 4px solid #FB5E02;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  align-self: center;
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-container .avatar {
   position: absolute;
-  right: 550px;
-  top: 25px;
-  width: 150px;
-
+  top: 100px;
+  width: 240px;
+  border: 4px solid #FB5E02;
 }
 
-.profile h2 {
+.profile-container h3 {
   font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 32px;
-  line-height: 14px;
-  align-items: center;
-  text-align: center;
-  margin-top: 75px;
-  margin-bottom: 25px;
-  color: #FFF5DC;
+  margin-top: 110px;
+  font-size: 48px;
+  color: white;
+
 }
 
-.profile p {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: lighter;
-  font-size: 22px;
-  line-height: 14px;
-  align-items: center;
-  text-align: center;
+.profile-container p {
+  font-size: 18px;
 }
 
-.requests .list{
-  display: flex;
-  justify-content: space-around;
-}
-
-.requests-list {
-  display: flex;
-  padding: 0px;
+ul.requests-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0px;
   margin: 0px;
-  justify-content: space-between;
+  padding: 0px;
+
 
 }
 
 .list {
   display:flex;
-  justify-content: space-arround;
-  width: 140px;
+  width: auto;
   padding: 10px;
+  margin: 10px;
   flex-direction: column;
   background-color: white;
-  border-radius: 5%;
-  position: center;
+  align-items: center;
+  border-radius: 15px;
 }
 
-.list a {
+.list:hover {
+  background-color: #f7c759;
+}
+
+a {
  text-align: center;
+ font-family: Roboto;
+ color: #fb5e02;
+}
+
+a:hover {
+text-decoration: none;
 }
 
 .list p {
   text-align: center;
+  font-family: Roboto;
+  color: #fb5e02;
+  margin: 0px;
 }
 
 .date {
   display: flex;
   flex-direction: column;
+}
+
+.balles {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.balles img {
+  width: 250px;
+  justify-content: center;
+  margin: 20px;
 }

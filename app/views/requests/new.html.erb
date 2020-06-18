@@ -1,20 +1,31 @@
-<div class="container py-5 text-center">
-  <div class="row justify-content-md-center">
-    <div class="col-md-auto py-5 min-100-vh">
-
-  <h1 class="p-3">Create a new Match !</h1>
-  <hp class="p-3">Just enter your date, time and location</p>
-
-  <%= form_for (@request) do |f| %>
-     <%= f.label :date %>
-    <%= f.date_field :date %>
-    <%= f.label :time %>
-    <%= f.time_field :time %>
-     <%= f.label :location %>
-    <%= f.text_field :location %>
-
-    <%= f.submit %>
+<div class="d-flex text-center min-100-vh">
+  <div class="card">
+    <h3>Propose a new match</h3>
+    <%= form_for (@request) do |f| %>
+     <%= f.label :date, class: "mt-3" %>
+    <%= f.date_field :date, class: "form-control" %>
+    <%= f.label :time, class: "mt-3"  %>
+    <%= f.time_field :time, class: "form-control" %>
+     <%= f.label :location, class: "mt-3" %>
+    <%= f.text_field :location, class: "form-control" %>
+    <%= f.submit class: "btn btn-outline-light mb-5 mt-3" %>
   <% end %>
+  </div>
+  <div class="m-5">
+    <div class="card mx-auto">
+      <h3> <%= current_user.first_name.capitalize %>'s agenda</h3>
+      <ul>
+        <% @requests.each do |request| %>
+            <p>
+              <%= request.date.strftime("%d %B") %> (<%= request.time.strftime("%I:%M %p") %>) - <%= request.location %>
+              <%= link_to request_path(request), method: :delete, data: {confirm: "Do you really want to delete it?"} do %>
+                <i class="fas fa-trash-alt fa-fw"></i>
+              <% end %>
+            </p>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
+
+

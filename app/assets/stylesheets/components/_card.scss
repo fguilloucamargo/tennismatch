@@ -14,11 +14,15 @@
   height: 400px;
   border-radius: 5px;
   padding: 15px;
-  padding-top: 85px;
+  padding-top: 65px;
   margin: 25px;
   margin-bottom: 50px;
   justify-content: space-around;
   box-shadow: 10px 10px 0px rgba(252,228,174,1);
+}
+
+.card:hover{
+  box-shadow: 10px 10px 0px rgba(247,199,89,1);
 }
 
 .card-avatar {
@@ -34,7 +38,7 @@
 
 }
 
-.card h2 {
+.card h3 {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -42,7 +46,7 @@
   line-height: 14px;
   align-items: center;
   text-align: center;
-
+  margin-top: 35px;
   color: #FFF5DC;
 }
 
@@ -56,25 +60,6 @@
   text-align: center;
 
   color: #FFF5DC;
-}
-
-.link {
-  font-family: Roboto;
-  font-size: 22px;
-  align-items: center;
-  text-align: center;
-  color: white;
-  border-radius: 4px;
-  background: #fdb200;
-  transition: background 0.3s ease;
-  margin-top: 45px;
-}
-
-
-.link:hover {
-  background: #f7c759;
-  color: white;
-  text-decoration: none;
 }
 
 // Smallest device

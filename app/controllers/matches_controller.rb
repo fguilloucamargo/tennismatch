@@ -8,8 +8,11 @@ class MatchesController < ApplicationController
     @match = Match.new
     @match.user = Request.find(params["request_id"]).user
     @match.request = Request.find(params["request_id"])
-    @match.save
-    redirect_to request_matches_path(@match)
+    if @match.save
+      redirect_to request_matches_path(@match)
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy

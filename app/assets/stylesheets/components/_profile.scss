@@ -47,7 +47,7 @@
   text-align: center;
 }
 
-.requests {
+.requests .list{
   display: flex;
   justify-content: space-around;
 }
@@ -63,10 +63,11 @@
 .list {
   display:flex;
   justify-content: space-arround;
-  width: 150px;
+  width: 140px;
   padding: 10px;
   flex-direction: column;
-  background-color: #f7c759;
+  background-color: white;
+  border-radius: 5%;
   position: center;
 }
 

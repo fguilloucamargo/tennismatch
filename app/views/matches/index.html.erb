@@ -3,8 +3,8 @@
   <div class="card-container ml-5">
     <% @matches.each do |match| %>
       <div class="card">
-        <%= cl_image_tag "#{match.user.photo.key}", class: "card-avatar" %>
-          <h3><%= "#{match.user.first_name} - #{match.request.location}" %></h3>
+        <%= cl_image_tag "#{match.request.user.photo.key}", class: "card-avatar" %>
+          <h3><%= "#{match.request.user.first_name} - #{match.request.location}" %></h3>
           <p><%= match.request.date.strftime("%d %B") %></p>
           <p><%= match.request.time.strftime("%I:%M %p") %></p>
           <%= link_to match_path(match), method: :delete, data: {confirm:("Do you want to remove this match?")} do %>

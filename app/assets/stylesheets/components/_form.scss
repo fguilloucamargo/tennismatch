@@ -1,0 +1,65 @@
+.matches {
+  display: flex;
+  justify-content: center;
+}
+
+.matches h3 {
+  font-size: 22px;
+  text-align: center;
+  font: Roboto;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.form {
+  width: 300px;
+  height: 430px;
+  background-color: #fb5e02;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 110px;
+  margin-top: 160px;
+  box-shadow: 10px 10px 0px rgba(252,228,174,1);
+}
+
+.form-match {
+  width: 300px;
+  height: auto;
+  background-color: #fb5e02;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 110px;
+  margin-top: 160px;
+  box-shadow: 10px 10px 0px rgba(252,228,174,1);
+}
+
+.form-match p {
+  margin: 22px;
+  background-color: white;
+  font: roboto;
+  border-radius: 10px;
+  border: 1px solid #fb5e02;
+  padding: 18px 23px;
+  text-align: center;
+}
+
+.form-match ul {
+  padding: 0px;
+}
+
+.form-match a:hover {
+  color: #f7c759;
+}
+
+.card-btn {
+  margin: 25px;
+  background-color: white;
+  font: roboto;
+  border-radius: 10px;
+  border: 1px solid #fb5e02;
+  padding: 8px 24px;
+}
+
+.card-btn:hover {
+  background-color: #f7c759;
+}

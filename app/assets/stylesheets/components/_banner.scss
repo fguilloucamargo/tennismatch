@@ -7,19 +7,95 @@
   margin-top:-17px;
 }
 #raquette {
-  width: 200px;
+  width: 400px;
+  top: 100px;
+  transform: rotate(30deg);
 }
 
-#balle {
-  width:64px;
-  top:106px;
-  left:259px;
+
+.ball-container {
+    position: relative;
+    left: 10%;
+    right: 150px;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    top: -5px;
+    left: 29px;
+}
+.ball {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #fdb200;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    animation: ball 1.5s linear infinite;
+}
+.ball:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: transparent;
+    left: -65%;
+    filter: blur(1px);
+}
+.ball:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: transparent;
+    right: -65%;
+    filter: blur(1px);
+}
+@keyframes ball {
+    0% {
+        transform: translate(-50%, -50%) translateY(-200px) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(0px) rotate(180deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(-200px) rotate(360deg);
+    }
+}
+.shadow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, 100%);
+    overflow: hidden;
+    filter: blur(2px);
+    z-index: -1;
+    animation: shadow 1.5s linear infinite;
+}
+@keyframes shadow {
+    0% {
+        transform: translate(-50%, 100%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, 100%) scale(0.5);
+    }
+    100% {
+        transform: translate(-50%, 100%) scale(1);
+    }
 }
 
 .banner-text {
   display:flex;
   justify-content: center;
   align-items: flex-end;
+
 
 }
 
@@ -36,7 +112,7 @@
   text-align: center;
   padding-top: 410px;
   font-size: 50px;
-  color: #313030;
+  color: #fdb200;
   margin-bottom: -10px;
 }
 
@@ -66,7 +142,7 @@
     font-size: 38px;
   }
   #raquette {
-  width: 200px;
+  width: 300px;
   }
 }
 

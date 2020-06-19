@@ -22,31 +22,31 @@ novak.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 novak.save!
 puts "✅ Novak"
 
-file = URI.open('https://cdn.wearetennis.bnpparibas/players/playerAvatar/209783.png')
+file = URI.open('https://cdn.wearetennis.bnpparibas/players/playerAvatar/48262.png')
 nadal = User.new(first_name: "Rafael", last_name: "Nadal", address: "Espagne", gender: "Man", email: "rafael@atp.com", password: "secret", level: classement.shuffle.first, description: "Jeu : Gaucher, revers à deux mains. Rafael Nadal base son jeu en premier lieu sur une défense redoutable, étant très difficile à déborder. Il est un des meilleurs relanceurs du circuit. Sa principale tactique consiste à exploiter le point faible de son adversaire (par exemple le revers de Roger Federer ou le coup droit d'Andy Murray) grâce à son lift, l'empêchant ainsi de passer à l'attaque, pour pouvoir défendre le plus facilement possible. Si l'adversaire décide de se décaler pour se protéger, il doit alors laisser une grande ouverture, qu'exploite Nadal, l'obligeant à courir sans arrêt.")
 nadal.photo.attach(io: file, filename: 'avatar_man.png', content_type: 'image/png')
 nadal.save!
 puts "✅ Nadal"
 
-file = URI.open('https://cdn.wearetennis.bnpparibas/players/playerAvatar/47591.png')
+file = URI.open('https://cdn.wearetennis.bnpparibas/players/playerAvatar/209783.png')
 dominic = User.new(first_name: "Dominic", last_name: "Thiem", address: "Autriche", gender: "Man", email: "dominic@atp.com", password: "secret", level: classement.shuffle.first, description: "Jeu : Droitier, revers à une main. Personne ne frappe la balle plus fort que lui sur le circuit. Il a une frappe de balle très lourde en coup droit, ce qui est surprenant de la part d'un joueur qui n'est pas particulièment imposant physiquement (1m85, 80 kilos). Il peut également servir à plus de 220-230 km/h. Il a un jeu agressif vraiment impressionnant")
 dominic.photo.attach(io: file, filename: 'avatar_man.png', content_type: 'image/png')
 dominic.save!
 puts "✅ Dominic"
 
-file = URI.open('https://cdn.wearetennis.bnpparibas/players/playerAvatar/501740.jpeg')
+file = URI.open('https://cdn.wearetennis.bnpparibas/players/playerAvatar/47591.png')
 federer = User.new(first_name: "Roger", last_name: "Federer", address: "Suisse", gender: "Man", email: "roger@atp.com", password: "secret", level: classement.shuffle.first, description: "Jeu : Droitier, revers à une main. Roger Federer possède une technique gestuelle très relâchée ; quelle que soit la situation dans laquelle il se trouve pour jouer une balle, il semble le faire sans efforts excessifs. Tout joueur, quel que soit son niveau, peut envisager de s'inspirer de sa technique.")
 federer.photo.attach(io: file, filename: 'avatar_man.png', content_type: 'image/png')
 federer.save!
 puts "✅ Federer"
 
-file = URI.open('https://cdn.wearetennis.bnpparibas/players/playerAvatar/501740.jpeg')
+file = URI.open('https://cdn.wearetennis.bnpparibas/players/playerAvatar/48478.png')
 stan = User.new(first_name: "Stan", last_name: "Wawrinka", address: "Suisse", gender: "Man", email: "stan@atp.com", password: "secret", level: classement.shuffle.first, description: "Jeu : Droitier, revers à une main, Stanislas Wawrinka est un joueur puissant qui développe un jeu d'attaque plutôt fluide et en variations, exploitant une très bonne technique grâce à une impeccable mobilité, un excellent timing, et un grand sens du jeu. Wawrinka est un joueur qui aime dicter le jeu pour marquer son empreinte sur le match et ainsi mettre la pression à son adversaire grâce à ses lourdes frappes du fond de court. Il est également doté d'une grande endurance physique, ce qui a mené Roger Federer à le surnommer « Stanimal », surnom repris par les médias et les joueurs français.")
 stan.photo.attach(io: file, filename: 'avatar_man.png', content_type: 'image/png')
 stan.save!
 puts "✅ Stan"
 
-file = URI.open('https://cdn.wearetennis.bnpparibas/players/playerAvatar/48478.png')
+file = URI.open('https://cdn.wearetennis.bnpparibas/players/playerAvatar/501740.jpeg')
 stefanos = User.new(first_name: "Stefanos", last_name: "Tsitsipas", address: "Grece", gender: "Man", email: "stefanos@atp.com", password: "secret", level: classement.shuffle.first, description: "Jeu : Droitier, revers à une main, Le Grec est avant tout un attaquant, et il aime gagner ses points pas des coups gagnants. Son coup droit est une arme de très bonne qualité. Revers: Petit bijou d'esthétisme, son revers est également terriblement efficace.")
 stefanos.photo.attach(io: file, filename: 'avatar_man.png', content_type: 'image/png')
 stefanos.save!

@@ -1,6 +1,6 @@
   <div class="profile">
     <div class="profile-container">
-      <%= cl_image_tag "#{@request.user.photo}", class: "avatar" %>
+      <%= cl_image_tag "#{@request.user.photo.key}", class: "avatar" %>
       <h3><%= @request.user.first_name %></h3>
       <p><%= @request.user.birth_date %></p>
       <p><%= @request.user.address %>

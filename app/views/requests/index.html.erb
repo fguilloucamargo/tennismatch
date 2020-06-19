@@ -31,7 +31,13 @@
     <% if request.matchs.empty? %>
       <%= link_to request_path(request) do %>
         <div class="card">
-          <%= cl_image_tag "#{request.user.photo.key}", crop: :fill, class: "card-avatar" %>
+
+          <% if request.user.photo.attached? %>
+            <%= cl_image_tag "#{request.user.photo.key}", crop: :fill, class: "card-avatar" %>
+          <% else %>
+             <%= image_tag current_user.gender == "Man" ? "avatar_man.svg" : "avatar_woman.svg", crop: :fill, class: "card-avatar bg-white" %>
+          <% end %>
+
           <h3><%= request.user.first_name %></h3>
           <p>
             <i class="fas fa-map-marked-alt"></i>

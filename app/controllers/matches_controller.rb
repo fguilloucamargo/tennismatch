@@ -1,12 +1,12 @@
 class MatchesController < ApplicationController
   def index
-    @matches = Match.all
+    @matches = Match.where(user_id: current_user)
   end
 
   def create
     @match = Match.new
     request = Request.find(params["request_id"])
-    @match.user = request.user
+    @match.user = current_user
     @match.request = request
     if @match.save
       redirect_to request_matches_path(@match)

@@ -38,11 +38,6 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'pg_search', '~> 2.3.0'
-<<<<<<< HEAD
-gem 'dotenv-rails', groups: [:development, :test]
-
-=======
->>>>>>> f8b9c6d0ba607e02520f9e4849e3545489d76d47
 
 group :development, :test do
   gem 'pry-byebug'

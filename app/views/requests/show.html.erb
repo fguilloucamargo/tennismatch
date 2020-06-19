@@ -1,10 +1,6 @@
   <div class="profile">
     <div class="profile-container">
-<<<<<<< HEAD
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-=======
-      <%= image_tag "#{@request.user.photo}", class: "avatar" %>
->>>>>>> f8b9c6d0ba607e02520f9e4849e3545489d76d47
+      <%= cl_image_tag "#{@request.user.photo}", class: "avatar" %>
       <h3><%= @request.user.first_name %></h3>
       <p><%= @request.user.birth_date %></p>
       <p><%= @request.user.address %>

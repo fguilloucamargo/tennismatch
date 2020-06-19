@@ -2,7 +2,7 @@
   height-min: 100vh;
   width: 600px;
   background-color: #fb5e02;
-  margin-top: 140px;
+  margin-top: 215px;
   margin-bottom: 50px;
   padding: 15px;
   border-radius: 15px;
@@ -16,6 +16,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 50px;
+  text-align: center;
+  padding-bottom: 0px;
+  padding-top: 10px;
 }
 
 .profile-container .avatar {

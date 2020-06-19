@@ -10,9 +10,10 @@
 @import "profile";
 @import "match";
 @import "form";
+@import "btn-nav";
 
 .min-100-vh {
-  min-height: calc(100vh - 182px);
+  min-height: calc(100vh - 82px);
 }
 
 h2 {
@@ -54,4 +55,8 @@ h2 {
   h2 {
     font-size: 42px;
   }
+}
+
+a:hover {
+  color: #fb5e02;
 }

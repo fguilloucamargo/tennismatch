@@ -11,8 +11,8 @@
 .card {
   background: #FB5E02;
   width: 360px;
-  height: 400px;
-  border-radius: 5px;
+  height: 300px;
+  border-radius: 15px;
   padding: 15px;
   padding-top: 65px;
   margin: 25px;
@@ -58,6 +58,7 @@
   line-height: 14px;
   align-items: center;
   text-align: center;
+  padding-bottom: 0px;
 
   color: #FFF5DC;
 }

@@ -1,15 +1,18 @@
-<div class="container">
-  <h2>Your next matches are:</h2>
-  <% @matches.each do |match| %>
-    <div class="card mx-auto">
-      <%= image_tag "#{match.user.photo}", class: "profile-avatar" %>
-        <h3><%= "#{match.user.first_name} - #{match.request.location}" %></h3>
-        <p><%= match.request.date.strftime("%d %B") %></p>
-        <p><%= match.request.time.strftime("%I:%M %p") %></p>
-        <%= link_to match_path(match), method: :delete, data: {confirm:("Do you want to remove this match?")} do %>
-          <i class="fas fa-trash-alt fa-fw"></i>
-        <% end %>
-      </div>
-    <% end %>
+<div class="margin-top">
+  <h1 class="h1-match">Your next matches are:</h1>
+  <div class="card-container ml-5">
+    <% @matches.each do |match| %>
+      <div class="card">
+        <%= image_tag "#{match.user.photo}", class: "card-avatar" %>
+          <h3><%= "#{match.user.first_name} - #{match.request.location}" %></h3>
+          <p><%= match.request.date.strftime("%d %B") %></p>
+          <p><%= match.request.time.strftime("%I:%M %p") %></p>
+          <%= link_to match_path(match), method: :delete, data: {confirm:("Do you want to remove this match?")} do %>
+            <i id="trash" class="fas fa-trash-alt fa-fw"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
